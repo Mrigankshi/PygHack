@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<style>
+			h1 {text-align: center;}
+			p {text-align: center;}
+			div {text-align: center;}
+			form {text-align: center;}
+			input {text-align: center;}
+		</style>
+	<link rel = "stylesheet" type="text/css" href = "style.css">
+		<meta charset= "utf-8">
+		<title> DiverCity </title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for msg in messages %}
+					<p> {{msg}} </p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %} 
+		<h1> Hello There! </h1>
+		<div> Welcome to the <b> DiverCity </b> app.</div>		
+		<p>
+			<img src="static/divercity.PNG" height="40%" width="20%">
+			<div>Our mision is to make places in your city accessible to everyone </div>
+		</p>
+		<form action = "#" method="POST">
+			<p>Go Ahead! Search for your destination</p>
+			<br> <input type = "text" name = "location"> </br>
+			<input type = "submit" name = "Search" value = "Search";/>
+		</form>
+	</body>
+</html>
