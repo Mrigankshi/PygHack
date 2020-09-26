@@ -20,15 +20,14 @@
 		{% endwith %}
 	<h1> {{ loc }} </h1>
 	<p>
-	<a href={{url}}>
-		<img src="static/staticmap.PNG" height="60%" width="40%">
-	</a>
+	{% for k,v in rate.items() %}
+	<div class="link">
+		<p>{{k}} : {{v}} </p>
+	</div>
+	{% endfor %}
 	</p>
-	<form method="get" action="/rate">
-		<input type="submit" value="Rate place" />
-	</form>	
-	<form method="get" action="/showratings">
-		<input type="submit" value="Check Rating" />
-	</form>	
+	<p>
+	<a href=/> Go Back to Home Page </a>
+	</p>
 	</body>
 </html>

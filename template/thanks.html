@@ -9,7 +9,7 @@
 		</style>
 	<link rel = "stylesheet" type="text/css" href = "style.css">
 		<meta charset= "utf-8">
-		<title> DiverCity </title>
+		<title> Thanks </title>
 	</head>
 	<body>
 		{% with messages = get_flashed_messages() %}
@@ -19,16 +19,10 @@
 				{% endfor %}
 			{% endif %}
 		{% endwith %} 
-		<h1> Hello There! </h1>
-		<div> Welcome to the <b> DiverCity </b> app.</div>		
+		<h1> Thanks </h1>
+		<div> Your feedback is very valuable</div>		
 		<p>
-			<img src="static/divercity.PNG" height="40%" width="20%">
-			<div>Our mision is to make places in your city accessible to everyone </div>
+		<a href=/> Go Back to Home Page </a>
 		</p>
-		<form action = "#" method="POST">
-			<p>Go Ahead! Search for your destination</p>
-			<br> <input type = "text" name = "location"> </br>
-			<input type = "submit" name = "Search" value = "Search"/>
-		</form>
 	</body>
 </html>

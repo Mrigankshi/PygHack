@@ -1,0 +1,194 @@
+<html>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<head>
+		<style>
+			h1 {text-align: center;}
+			p {text-align: center;}
+			div {text-align: center;}
+			form {text-align: center;}
+			input {text-align: center;}
+			input[type="range"] { width:400px;}
+		</style>
+	<link rel = "stylesheet" type="text/css" href = "style.css">
+		<meta charset= "utf-8">
+		<title> Rate </title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for msg in messages %}
+					<p> {{msg}} </p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %} 
+		<h1> {{loc}} </h1>	
+		
+		
+	
+			<div class="slidecontainer">
+			
+			<div id = 'womendiv'>
+			<p>Womxn Friendly: <span id="rating1" class="slider"></span></p>
+			<input name="women" type="range" id="women" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+			</div>
+  			
+
+			<p>LGBTQ+ Friendly: <span id="rating2" class="slider"></span></p>
+			<input name="lgbtq" type="range" id="lgbtq" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			
+  			
+  			<p>Immigrant Friendly: <span id="rating3" class="slider"></span></p>
+  			<input name="immi" type="range" id="immi" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			
+  			
+  			<p>Senior Citizen Friendly: <span id="rating4" class="slider"></span></p>
+  			<input name="sc" type="range" id="sc" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			
+  			<p>Differently Abled Friendly: <span id="rating5" class="slider"></span></p>
+  			<input name="pd" type="range" id="pd" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			
+  			<p>Intellectual Disability friendly Friendly: <span id="rating6" class="slider"></span></p>
+  			<input name="md" type="range" id="md" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			
+  			<p>African American Friendly: <span id="rating7" class="slider"></span></p>
+  			<input name="black" type="range" id="black" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			
+  			<p>Native American Friendly: <span id="rating8" class="slider"></span></p>
+  			<input name="native" type="range" id="native" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			
+  			<p>Jewish Friendly: <span id="rating9" class="slider"></span></p>
+  			<input name="jews" type="range" id="jews" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			
+  
+  				<datalist id="tickmarks">
+					  <option value="0" label="0"></option>
+					  <option value="1"></option>
+					  <option value="2"></option>
+					  <option value="3"></option>
+					  <option value="4"></option>
+					  <option value="5" label="+5"></option>
+					  <option value="-1"></option>
+					  <option value="-2"></option>
+					  <option value="-3"></option>
+					  <option value="-4"></option>
+					  <option value="-5" label="-5"></option>
+				</datalist>
+		</div>
+		  <script>
+				var ratings =  {time: Date.now(), women: null, lgbtq:null, immi: null, sc:null, pd:null, md:null, black :null, native:null, jews:null};
+				
+				
+				var rangeslider = document.getElementById("women");
+				var output = document.getElementById("rating1");
+				output.innerHTML = rangeslider.value;
+
+				rangeslider.oninput = function() {
+				  output.innerHTML = this.value;
+				  ratings.women = this.value;
+				  //var newText = $(document.createElement('div')).attr("id", 'TextBox');
+					//newText.after().html('<input type="text" name="textbox" id="textbox" value="" >');
+					//newText.appendTo("#womendiv");
+				}
+				
+				var rangeslider2 = document.getElementById("lgbtq");
+				var output2 = document.getElementById("rating2");
+				output2.innerHTML = rangeslider2.value;
+
+				rangeslider2.oninput = function() {
+				  output2.innerHTML = this.value;
+				  ratings.lgbtq = this.value;
+				  console.log("lg");
+				}
+				
+				var rangeslider3 = document.getElementById("immi");
+				var output3= document.getElementById("rating3");
+				output3.innerHTML = rangeslider3.value;
+
+				rangeslider3.oninput = function() {
+				  output3.innerHTML = this.value;
+				  ratings.immi = this.value;
+				}
+				var rangeslider4 = document.getElementById("sc");
+				var output4 = document.getElementById("rating4");
+				output4.innerHTML = rangeslider4.value;
+
+				rangeslider4.oninput = function() {
+				  output4.innerHTML = this.value;
+				  ratings.sc = this.value;
+				}
+				var rangeslider5 = document.getElementById("pd");
+				var output5 = document.getElementById("rating5");
+				output5.innerHTML = rangeslider5.value;
+
+				rangeslider5.oninput = function() {
+				  output5.innerHTML = this.value;
+				  ratings.pd = this.value;
+				}
+				
+				var rangeslider6 = document.getElementById("md");
+				var output6 = document.getElementById("rating6");
+				output6.innerHTML = rangeslider6.value;
+
+				rangeslider6.oninput = function() {
+				  output6.innerHTML = this.value;
+				  ratings.md = this.value;
+				}
+				
+				var rangeslider7 = document.getElementById("black");
+				var output7 = document.getElementById("rating7");
+				output7.innerHTML = rangeslider7.value;
+
+				rangeslider7.oninput = function() {
+				  output7.innerHTML = this.value;
+				  ratings.black = this.value;
+				}
+				
+				var rangeslider8 = document.getElementById("native");
+				var output8 = document.getElementById("rating8");
+				output8.innerHTML = rangeslider8.value;
+
+				rangeslider8.oninput = function() {
+				  output8.innerHTML = this.value;
+				  ratings.native = this.value;
+				}
+				
+				var rangeslider9 = document.getElementById("jews");
+				var output9 = document.getElementById("rating9");
+				output9.innerHTML = rangeslider9.value;
+
+				rangeslider9.oninput = function() {
+				  output9.innerHTML = this.value;
+				  ratings.jews = this.value;
+				}
+				
+		</script>
+        <script type="text/javascript">
+				$(document).ready(function(){
+        
+					 $('#submit').click(function( event ) {
+					  event.preventDefault();
+					  console.log(ratings);
+					  $.ajax({
+							  type: "POST",
+							  contentType: "application/json;charset=utf-8",
+							  url: "/rate",
+							  traditional: "true",
+							  data: JSON.stringify({ratings}),
+							  dataType: "json",
+							  success: function(response) {
+								console.log("HERE");
+								$('p').text(response.toString());
+							  }, 
+							  });
+						});
+				});  
+		  </script>
+			
+
+		<form action = "#" method="POST">
+			<!--<p>Elaborate your experience (optional)</p>
+			<br> <input type = "text" name = "rating"> </br>-->
+			<input type = "submit" value = "Done" id = "submit"/>
+		</form>
+	</body>
+</html>
