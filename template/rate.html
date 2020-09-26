@@ -32,33 +32,45 @@
 			<input name="women" type="range" id="women" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
 			</div>
   			
-
+			<div id = 'lgbtqdiv'>
 			<p>LGBTQ+ Friendly: <span id="rating2" class="slider"></span></p>
 			<input name="lgbtq" type="range" id="lgbtq" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			</div>
   			
-  			
+  			<div id = 'immidiv'>
   			<p>Immigrant Friendly: <span id="rating3" class="slider"></span></p>
   			<input name="immi" type="range" id="immi" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			</div>
   			
-  			
+  			<div id = 'scdiv'>
   			<p>Senior Citizen Friendly: <span id="rating4" class="slider"></span></p>
   			<input name="sc" type="range" id="sc" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			</div>
   			
+  			<div id = 'pddiv'>
   			<p>Differently Abled Friendly: <span id="rating5" class="slider"></span></p>
   			<input name="pd" type="range" id="pd" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			</div>
   			
+  			<div id = 'mddiv'>
   			<p>Intellectual Disability friendly Friendly: <span id="rating6" class="slider"></span></p>
   			<input name="md" type="range" id="md" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			</div>
   			
+  			<div id = 'blackdiv'>
   			<p>African American Friendly: <span id="rating7" class="slider"></span></p>
   			<input name="black" type="range" id="black" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			</div>
   			
+  			<div id = 'nativediv'>
   			<p>Native American Friendly: <span id="rating8" class="slider"></span></p>
   			<input name="native" type="range" id="native" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
+  			</div>
   			
+  			<div id = 'jewsdiv'>
   			<p>Jewish Friendly: <span id="rating9" class="slider"></span></p>
   			<input name="jews" type="range" id="jews" min="-5" max="5" value="0" step="1" class="slider" list="tickmarks">
-  			
+  			</div>			
   
   				<datalist id="tickmarks">
 					  <option value="0" label="0"></option>
@@ -75,7 +87,8 @@
 				</datalist>
 		</div>
 		  <script>
-				var ratings =  {time: Date.now(), women: null, lgbtq:null, immi: null, sc:null, pd:null, md:null, black :null, native:null, jews:null};
+				var ratings =  {women: null, lgbtq:null, immi: null, sc:null, pd:null, md:null, black :null, native:null, jews:null};
+				var reviews = { women: null, lgbtq:null, immi: null, sc:null, pd:null, md:null, black :null, native:null, jews:null};
 				
 				
 				var rangeslider = document.getElementById("women");
@@ -85,9 +98,9 @@
 				rangeslider.oninput = function() {
 				  output.innerHTML = this.value;
 				  ratings.women = this.value;
-				  //var newText = $(document.createElement('div')).attr("id", 'TextBox');
-					//newText.after().html('<input type="text" name="textbox" id="textbox" value="" >');
-					//newText.appendTo("#womendiv");
+				  var newText = document.createElement("textarea");
+				  newText.id = "tbwomen";
+					document.getElementById("womendiv").appendChild(newText);
 				}
 				
 				var rangeslider2 = document.getElementById("lgbtq");
@@ -97,7 +110,9 @@
 				rangeslider2.oninput = function() {
 				  output2.innerHTML = this.value;
 				  ratings.lgbtq = this.value;
-				  console.log("lg");
+				  var newText2 = document.createElement("textarea");
+				  newText2.id = "tblgbtq";
+					document.getElementById("lgbtqdiv").appendChild(newText2);
 				}
 				
 				var rangeslider3 = document.getElementById("immi");
@@ -107,7 +122,11 @@
 				rangeslider3.oninput = function() {
 				  output3.innerHTML = this.value;
 				  ratings.immi = this.value;
+				  var newText3 = document.createElement("textarea");
+				  newText3.id = "tbimmi";
+					document.getElementById("immidiv").appendChild(newText3);
 				}
+				
 				var rangeslider4 = document.getElementById("sc");
 				var output4 = document.getElementById("rating4");
 				output4.innerHTML = rangeslider4.value;
@@ -115,7 +134,11 @@
 				rangeslider4.oninput = function() {
 				  output4.innerHTML = this.value;
 				  ratings.sc = this.value;
+				  var newText4 = document.createElement("textarea");
+				  newText4.id = "tbsc";
+					document.getElementById("scdiv").appendChild(newText4);
 				}
+				
 				var rangeslider5 = document.getElementById("pd");
 				var output5 = document.getElementById("rating5");
 				output5.innerHTML = rangeslider5.value;
@@ -123,6 +146,9 @@
 				rangeslider5.oninput = function() {
 				  output5.innerHTML = this.value;
 				  ratings.pd = this.value;
+				  var newText5 = document.createElement("textarea");
+				  newText5.id = "tbpd";
+					document.getElementById("pddiv").appendChild(newText5);
 				}
 				
 				var rangeslider6 = document.getElementById("md");
@@ -132,6 +158,9 @@
 				rangeslider6.oninput = function() {
 				  output6.innerHTML = this.value;
 				  ratings.md = this.value;
+				  var newText6 = document.createElement("textarea");
+				  newText6.id = "tbmd";
+					document.getElementById("mddiv").appendChild(newText6);
 				}
 				
 				var rangeslider7 = document.getElementById("black");
@@ -141,6 +170,9 @@
 				rangeslider7.oninput = function() {
 				  output7.innerHTML = this.value;
 				  ratings.black = this.value;
+				  var newText7 = document.createElement("textarea");
+				  newText7.id = "tbblack";
+					document.getElementById("blackdiv").appendChild(newText7);
 				}
 				
 				var rangeslider8 = document.getElementById("native");
@@ -150,6 +182,9 @@
 				rangeslider8.oninput = function() {
 				  output8.innerHTML = this.value;
 				  ratings.native = this.value;
+				  var newText8 = document.createElement("textarea");
+				  newText8.id = "tbnative";
+					document.getElementById("nativediv").appendChild(newText8);
 				}
 				
 				var rangeslider9 = document.getElementById("jews");
@@ -159,7 +194,12 @@
 				rangeslider9.oninput = function() {
 				  output9.innerHTML = this.value;
 				  ratings.jews = this.value;
+				  var newText9 = document.createElement("textarea");
+				  newText9.id = "tbjews";
+					document.getElementById("jewsdiv").appendChild(newText9);
 				}
+				
+					
 				
 		</script>
         <script type="text/javascript">
@@ -168,17 +208,47 @@
 					 $('#submit').click(function( event ) {
 					  event.preventDefault();
 					  console.log(ratings);
+					  var one = document.getElementById("tbwomen");
+            if(one)
+     					{reviews.women = one.value;}
+            var two = document.getElementById("tblgbtq");
+            if(two)
+            	{reviews.lgbtq = two.value;}
+         		var three = document.getElementById("tbimmi");
+            if (three)
+					  	{reviews.immi = three.value;}
+            var four = document.getElementById("tbsc");
+            if (four)
+					  	{reviews.sc = four.value;}
+            var five = document.getElementById("tbpd");
+            if (five)
+					  	{reviews.pd = five.value;}
+            var six = document.getElementById("tbmd");
+            if (six)
+					  	{reviews.md = six.value;}
+             var seven = document.getElementById("tbblack");
+            if (seven)
+					  	{reviews.black = seven.value;}
+            var eight = document.getElementById("tbnative");
+            if (eight)
+					  	{reviews.native = eight.value;}
+            var nine = document.getElementById("tbjews");
+            if (nine)
+					  	{reviews.jews = nine.value;}
+            console.log("here");
+					  
+					  var result = {"ratings" : ratings, "reviews" : reviews, "time" : Date.now() }
+					  
 					  $.ajax({
 							  type: "POST",
 							  contentType: "application/json;charset=utf-8",
 							  url: "/rate",
 							  traditional: "true",
-							  data: JSON.stringify({ratings}),
+							  data: JSON.stringify({result}),
 							  dataType: "json",
 							  success: function(response) {
-								console.log("HERE");
-								$('p').text(response.toString());
-							  }, 
+							  window.location.href = response.redirect
+							  }
 							  });
 						});
 				});  

@@ -1,0 +1,41 @@
+
+<html>
+	<head>
+		<style>
+			h1 {text-align: center;}
+			p {text-align: center;}
+			div {text-align: center;}
+			form {text-align: center;}
+			input {text-align: center;}
+		</style>
+	<link rel = "stylesheet" type="text/css" href = "style.css">
+	<link rel = "shortcut icon" href = "#"/>
+		<meta charset= "utf-8">
+		<title> Reviews </title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for msg in messages %}
+					<p> {{msg}} </p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %} 
+		<h1> {{group}} </h1>
+		
+		{% for item in data %}
+ 			<left> {{ item }} <br></left>
+	<form method="get" action="/">
+		<input type="submit" value="Upvote" style="float: left;"/>
+		<input type="submit" value="Downvote" style="float: left;"/>
+	</form>
+			
+			<br>
+		{% endfor %}		
+	<p>
+	<a href=/> Go Back to Home Page </a>
+	</p>
+		
+	</body>
+</html>
+
